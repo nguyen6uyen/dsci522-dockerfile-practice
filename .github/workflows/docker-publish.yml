@@ -34,13 +34,6 @@ jobs:
           tags: |
             type=raw, value={{sha}},enable=${{github.ref_type != 'tag' }}
             type=raw, value=latest
-
-      - name: List files in the repository
-        run: |
-          echo "Listing root directory:"
-          ls -al .
-          echo "Listing .github folder:"
-          ls -al .github
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
